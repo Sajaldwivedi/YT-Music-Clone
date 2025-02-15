@@ -301,3 +301,39 @@ hr {
 {
     font-size: 25px;
 }
+/* Play Button */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Play Button Image */
+.play-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Hover Effects */
+.card1:hover img, .card2:hover img, .card3:hover img, 
+.card4:hover img, .card5:hover img, .card6:hover img, 
+.card7:hover img, .card8:hover img, .card9:hover img {
+    filter: brightness(75%);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.card1:hover .play-button, .card2:hover .play-button, .card3:hover .play-button, 
+.card4:hover .play-button, .card5:hover .play-button, .card6:hover .play-button, 
+.card7:hover .play-button, .card8:hover .play-button, .card9:hover .play-button {
+    opacity: 1;
+}
