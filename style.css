@@ -317,4 +317,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    bottom: 10px;
+    right: 10px;
 }
