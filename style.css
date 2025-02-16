@@ -150,7 +150,9 @@ hr {
     background-color:#121212;
     top: 0;
     padding-top: 20px;
-    width:75vw
+    width:75vw;
+    margin-left: -2vw;
+    padding-left: 20px;
 }
 
 .righticons {
