@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let currentAudio = null;
     let currentSongIndex = 0;
-    
+
     const songs = [
         { id: "songplayer1", name: "Uyii Amma (From Azaad)", img: "Images/Uyii Amma.jpg" },
         { id: "songplayer2", name: "Ye Tune Kya Kiya", img: "Images/YE tune kya kiya.jpg" },
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             songTitle.textContent = songs[index].name;
             songImage.src = songs[index].img;
             playPauseButton.src = "Images/pause_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg";
-            songPlayerBar.classList.remove("hidden");
+            songPlayerBar.classList.add("show");
 
             currentAudio.addEventListener("ended", function () {
                 nextSong();
@@ -85,6 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function hidePlayer() {
+        songPlayerBar.classList.remove("show");
+    }
+
     playPauseButton.addEventListener("click", togglePlayPause);
     prevButton.addEventListener("click", prevSong);
     nextButton.addEventListener("click", nextSong);
@@ -98,4 +102,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     });
+
+    if (currentAudio) {
+        currentAudio.addEventListener("ended", function () {
+            hidePlayer();
+        });
+    }
 });
