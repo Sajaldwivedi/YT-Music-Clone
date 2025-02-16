@@ -84,7 +84,7 @@ hr {
     flex-direction: column;
 }
 
-/* left segment completed */
+/* Left panel completed */
 
 .container {
     display: flex;
@@ -138,15 +138,14 @@ hr {
     outline: none;
 }
 
-.topbar
-{
+.topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
 }
-.righticons
-{
+
+.righticons {
     display: flex;
     margin-left: 30vw;
     justify-content: space-between;
@@ -154,87 +153,87 @@ hr {
     gap: 15px;
 }
 
-.signinbutton
-{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #2D2929;
-        background-color: white;
-        border-radius: 18px;
-        width: 80px;
-        height: 35px;
-    
+.signinbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2D2929;
+    background-color: white;
+    border-radius: 18px;
+    width: 80px;
+    height: 35px;
 }
-.signtext{
+
+.signtext {
     color: black;
     size: 1.3rem;
     font-weight: bold;
 }
-.moodmenu
-{
+
+.moodmenu {
     margin-top: 90px;
     display: flex;
     gap: 20px;
 }
-.Podcasts, .Feel, .Commute, .Energize, .Romance, .Sad, .Relax, .Work, .Party, .Focus, .Sleep
-{
+
+.Podcasts, .Feel, .Commute, .Energize, .Romance, .Sad, .Relax, .Work, .Party, .Focus, .Sleep {
   border: 1px solid  #333;
   padding: 10px;
   border-radius: 10px;
   background-color: #333;
   font-size: 16px;
 }
-.Podcasts:hover, .Feel:hover, .Commute:hover, .Energize:hover, .Romance:hover, .Sad:hover, .Relax:hover, .Work:hover, .Party:hover, .Focus:hover, .Sleep:hover
-{
+
+.Podcasts:hover, .Feel:hover, .Commute:hover, .Energize:hover, .Romance:hover, .Sad:hover, .Relax:hover, .Work:hover, .Party:hover, .Focus:hover, .Sleep:hover {
     background-color: #494646;
 }
-.toptext
-{
+
+.toptext {
     color: #b6aeae;
     font-size: 16.8px;
     margin-top: 35px;
 }
-.topheading 
-{
+
+.topheading {
    font-size: 35px;
    font-weight: bold;
 }
+
 .msname {
     font-weight: bold;
-    width: 100%; /* Ensure it respects the card width */
+    width: 100%;
     display: block;
 }
-.msname:hover
-{
+
+.msname:hover {
     text-decoration: underline;
 }
+
 .msinfo {
     font-size: 17px;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limits text to 2 lines */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-
-.card1, .card2, .card3, .card4, .card5, .card6 , .card7, .card8, .card9{
+.card1, .card2, .card3, .card4, .card5, .card6 , .card7, .card8, .card9 {
     width: 190px;
     height: auto;
     font-size: 19px;
     flex-shrink: 0;
-
 }
-.displaybutton
-{
+
+.displaybutton {
     display: none;
     flex-direction: column;
 }
-.cardsection2 img
-{
+
+.cardsection2 img {
     border-radius: 8px;
 }
+
 .cardsection2 {
     display: flex;
     gap: 20px;
@@ -247,8 +246,7 @@ hr {
     box-sizing: border-box;
 }
 
-.cardsection2:hover 
-{
+.cardsection2:hover {
     overflow-x: auto;
 }
 
@@ -265,31 +263,31 @@ hr {
 .cardsection2::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-.headingtext
-{
+
+.headingtext {
    font-size: 35px;
    font-weight: bold;
    margin-top: 40px;
 }
-.headingtext1
-{
+
+.headingtext1 {
    font-size: 35px;
    font-weight: bold;
    margin-top: 40px;
 }
-.headingtext:hover
-{
+
+.headingtext:hover {
     text-decoration: underline;
 }
-.cardsection
-{
+
+.cardsection {
     display: flex;
     flex-direction: column;
     gap: 60px;
     margin-right: calc(8px);
 }
-.section3
-{
+
+.section3 {
     display: flex;
     align-items: center;
     gap: 60px;
@@ -297,43 +295,15 @@ hr {
     margin-right: 100px;
     margin-top: 35px;
 }
-.righttextpartheading
-{
+
+.righttextpartheading {
     font-size: 25px;
 }
-/* Play Button */
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease-in-out;
-}
 
-/* Play Button Image */
-.play-button img {
-    width: 30px;
-    height: 30px;
-}
-
-/* Hover Effects */
+/* Hover Effect: Slight Darkness on Image */
 .card1:hover img, .card2:hover img, .card3:hover img, 
 .card4:hover img, .card5:hover img, .card6:hover img, 
 .card7:hover img, .card8:hover img, .card9:hover img {
     filter: brightness(75%);
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
-}
-
-.card1:hover .play-button, .card2:hover .play-button, .card3:hover .play-button, 
-.card4:hover .play-button, .card5:hover .play-button, .card6:hover .play-button, 
-.card7:hover .play-button, .card8:hover .play-button, .card9:hover .play-button {
-    opacity: 1;
 }
