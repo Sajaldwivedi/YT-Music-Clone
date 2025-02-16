@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const songTitle = document.getElementById("songinformation");
     const songImage = document.getElementById("midsongimg");
     const progressBar = document.getElementById("progress-bar");
+    const volumeButton = document.querySelector(".volumeimg img");
+    const timeDisplay = document.getElementById("time-display");  
 
     function playSong(index) {
         if (currentAudio) {
@@ -93,9 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
             progressBar.value = progress;
             progressBar.style.setProperty("--progress", `${progress}%`);
+            updateTimeDisplay();
         }
     }
-    
 
     function seekSong(event) {
         if (currentAudio) {
@@ -104,14 +106,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function hidePlayer() {
-        songPlayerBar.classList.remove("show");
+    function updateTimeDisplay() {
+        if (currentAudio) {
+            const currentTime = formatTime(currentAudio.currentTime);
+            const duration = formatTime(currentAudio.duration);
+            timeDisplay.textContent = `${currentTime} / ${duration}`;
+        }
+    }
+
+    function formatTime(seconds) {
+        if (isNaN(seconds) || seconds < 0) return "0:00";
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+    }
+
+    function toggleMute() {
+        if (currentAudio) {
+            if (currentAudio.muted) {
+                currentAudio.muted = false;
+                volumeButton.src = "Images/volume_up_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg";
+            } else {
+                currentAudio.muted = true;
+                volumeButton.src = "Images/volume_off_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg";
+            }
+        }
     }
 
     playPauseButton.addEventListener("click", togglePlayPause);
     prevButton.addEventListener("click", prevSong);
     nextButton.addEventListener("click", nextSong);
     progressBar.addEventListener("input", seekSong);
+    volumeButton.addEventListener("click", toggleMute);
 
     songs.forEach((song, index) => {
         const playButton = document.getElementById(`playbutton${index + 1}`);
@@ -125,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (currentAudio) {
         currentAudio.addEventListener("ended", function () {
-            hidePlayer();
+            songPlayerBar.classList.remove("show");
         });
     }
 });
