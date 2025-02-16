@@ -99,6 +99,7 @@ hr {
     position: sticky;
     background-color: #121212;
     height: 100vh;
+    
 }
 
 .searchbox {
@@ -143,6 +144,13 @@ hr {
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 1000;
+    border-bottom: 1px solid #2D2929;
+    padding-bottom: 20px;
+    background-color:#121212;
+    top: 0;
+    padding-top: 20px;
+    width:75vw
 }
 
 .righticons {
