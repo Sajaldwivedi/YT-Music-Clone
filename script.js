@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButton = document.querySelector(".nextbutton img");
     const songTitle = document.getElementById("songinformation");
     const songImage = document.getElementById("midsongimg");
+    const progressBar = document.getElementById("progress-bar");
 
     function playSong(index) {
         if (currentAudio) {
@@ -58,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
             currentAudio.addEventListener("ended", function () {
                 nextSong();
             });
+
+            currentAudio.addEventListener("timeupdate", updateProgress);
         }
     }
 
@@ -85,6 +88,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function updateProgress() {
+        if (currentAudio) {
+            const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+            progressBar.value = progress;
+            progressBar.style.setProperty("--progress", `${progress}%`);
+        }
+    }
+    
+
+    function seekSong(event) {
+        if (currentAudio) {
+            const seekTime = (event.target.value / 100) * currentAudio.duration;
+            currentAudio.currentTime = seekTime;
+        }
+    }
+
     function hidePlayer() {
         songPlayerBar.classList.remove("show");
     }
@@ -92,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     playPauseButton.addEventListener("click", togglePlayPause);
     prevButton.addEventListener("click", prevSong);
     nextButton.addEventListener("click", nextSong);
+    progressBar.addEventListener("input", seekSong);
 
     songs.forEach((song, index) => {
         const playButton = document.getElementById(`playbutton${index + 1}`);

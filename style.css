@@ -378,23 +378,34 @@ hr {
     z-index: 1000;
     box-sizing: border-box;
     padding-left: 30px;
-    opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    padding-right: 40px;
+    padding-left: 30px;
 }
 
 .playerbar.show {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
 }
-
-
 
 .leftplayerbuttons {
     display: flex;
     align-items: center;
     gap: 20px;
 }
+.leftplayerbuttons img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.playpausebutton img {
+    width: 40px;
+    height: 40px;
+}
+
 
 .midsonginfo {
     display: flex;
@@ -421,21 +432,32 @@ hr {
     max-width: 300px;
 }
 
-.volumeslider {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    min-width: 80px;
-    flex-shrink: 0;
+.progress-container {
+    width: 100%;
+    position: absolute;
+    top: -15px;
+    left: 0;
 }
 
-.volumeslider img {
-    width: 28px;
-    height: 28px;
+#progress-bar {
+    width: 100%;
+    height: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #ff0000 0%, #ff0000 var(--progress), #555 var(--progress), #555 100%);
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
     cursor: pointer;
 }
-.leftplayerbuttons img {
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-}
+
+
