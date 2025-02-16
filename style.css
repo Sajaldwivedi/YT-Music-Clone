@@ -301,12 +301,6 @@ hr {
 }
 
 /* Hover Effect: Slight Darkness on Image */
-.card1:hover img, .card2:hover img, .card3:hover img, 
-.card4:hover img, .card5:hover img, .card6:hover img, 
-.card7:hover img, .card8:hover img, .card9:hover img {
-    filter: brightness(75%);
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
-}
 .bollydance {
     position: relative;
     display: inline-block;
@@ -318,23 +312,30 @@ hr {
     border-radius: 8px;
 }
 
+.bollydance:hover img {
+    filter: brightness(75%);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
 .hoverimg {
-    height: 50px;
-    width: 50px;
-    background-color: #FFFFFF;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(112, 100, 100, 0.85);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 15px;
+    right: 15px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .bollydance:hover .hoverimg {
     opacity: 1;
+    transform: scale(1.1);
+    /* background-color: rgba(200, 200, 200, 0.9); */
 }
 
 .hoverimg a {
@@ -346,7 +347,8 @@ hr {
 }
 
 .hoverimg img {
-    height: 60%;
-    width: 60%;
+    height: 65%;
+    width: 65%;
     object-fit: contain;
+    
 }
