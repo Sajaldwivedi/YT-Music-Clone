@@ -85,7 +85,7 @@
                             <div class="topimg">
                            <div class="bollydance">
                                 <img src="Images/Uyii Amma.jpg" alt="" height="180px" width="180px">
-                                <div class="hoverimg"><a href=""><img src="Images/play_arrow_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" width="27px"></a>
+                                <div class="hoverimg"><a href=""><img src="Images/play_arrow_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" width="27px" onclick="playSong1()"></a>
                                 </div>
                             </div>
                                
@@ -103,7 +103,7 @@
                             <div class="topimg">
                             <div class="bollydance">
                                 <img src="Images/YE tune kya kiya.jpg" alt="" height="180px" width="180px">
-                                <div class="hoverimg"><a href=""><img src="Images/play_arrow_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" width="27px"></a>
+                                <div class="hoverimg"><a href=""><img src="Images/play_arrow_24dp_FFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="" width="27px" id="playbutton2"></a>
                             </div>
                             
                             </div>
@@ -567,6 +567,15 @@
             </div>
         
     </div>
+    
+        <audio id="songPlayer1">
+            <source src="songs/Uyi Amma (From  Azaad ).mp3" type="audio/mpeg">
+        </audio>
+        <audio id="songplayer2">
+            <source src="songs/YE TUNE KYA KIYA   JAVED BASHIR, PRITAM, RAJAT ARORA.mp3" type="audio/mpeg">
+        </audio>
+        
+    
     <script src="script.js"></script>
 </body>
 </html>
