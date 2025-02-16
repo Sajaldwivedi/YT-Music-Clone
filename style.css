@@ -362,3 +362,57 @@ hr {
     object-fit: contain;
     
 }
+/* player bar */
+.playerbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #181818;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+    z-index: 1000;
+}
+
+.playerbar.show {
+    transform: translateY(0);
+}
+
+.leftplayerbuttons, .midsonginfo, .volumeslider {
+    display: flex;
+    align-items: center;
+}
+
+.leftplayerbuttons img, .volumeimg img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.midsonginfo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.songimg img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.songinformation {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
